@@ -2,7 +2,7 @@ import { type Prettify } from "ts-hover-prettify";
 
 type Class = "Dragonknight" | "Ranger" | "Spellweaver" | "Steam Mechanicus";
 
-type ItemType = "Set Item" | "Unique Item" | "Mythic Item";
+type Rarity = "Set Item" | "Unique Item" | "Mythic Item";
 
 type Slot =
 	| "Head, Helmet"
@@ -79,21 +79,21 @@ type ItemSet = {
 
 type SetItem = Prettify<
 	BaseItem & {
-		type: "Set Item";
+		rarity: "Set Item";
 		set: ItemSet;
 	}
 >;
 
 type UniqueItem = Prettify<
 	BaseItem & {
-		type: "Unique Item";
+		rarity: "Unique Item";
 		uniqueBonus: string[];
 	}
 >;
 
 type MythicItem = Prettify<
 	BaseItem & {
-		type: "Mythic Item";
+		rarity: "Mythic Item";
 		set?: ItemSet | undefined;
 		uniqueBonus?: string[] | undefined;
 	}

@@ -1,10 +1,6 @@
-import { type NextRequest, type NextResponse } from "next/server";
+import { type NextRequest } from "next/server";
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function GET(req: NextRequest) {
 	const body = await req.json();
-	return new Response(JSON.stringify(body), {
-		headers: {
-			"content-type": "application/json",
-		},
-	});
+	return Response.json({ body });
 }
