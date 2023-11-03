@@ -1,4 +1,4 @@
-import { Item } from "@/types/items";
+import { type Item } from "@/types/items";
 
 const mageItems: Item[] = [];
 

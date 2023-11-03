@@ -73,7 +73,7 @@ type ItemSet = {
 	items: string[];
 	bonus: {
 		requiredItems: number;
-		value: string;
+		value: StatType | string;
 	}[];
 };
 
@@ -87,7 +87,9 @@ type SetItem = Prettify<
 type UniqueItem = Prettify<
 	BaseItem & {
 		rarity: "Unique Item";
-		uniqueBonus: string[];
+		uniqueBonus: {
+			value: Stat | string;
+		}[];
 	}
 >;
 
@@ -95,7 +97,11 @@ type MythicItem = Prettify<
 	BaseItem & {
 		rarity: "Mythic Item";
 		set?: ItemSet | undefined;
-		uniqueBonus?: string[] | undefined;
+		uniqueBonus?:
+			| {
+					value: Stat | string;
+			  }[]
+			| undefined;
 	}
 >;
 
