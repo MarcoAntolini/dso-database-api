@@ -13,9 +13,11 @@
 		"react": "^18.2.0"
 	},
 	"devDependencies": {
+		"@total-typescript/ts-reset": "^0.5.1",
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"autoprefixer": "^10.0.1",
+		"dso-database-types": "^1.2.0",
 		"eslint": "^8",
 		"eslint-config-next": "14.0.1",
 		"ts-hover-prettify": "^1.1.0",
