@@ -9,7 +9,7 @@ type Message = {
 	rarity?: Rarity;
 };
 
-export async function GET(req: NextRequest) {
+export async function POST(req: NextRequest) {
 	const data = (await req.json()) as Message;
 	const { className, slot, stat, rarity } = data;
 	const filteredItems = items.filter((item) => {
