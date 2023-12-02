@@ -1,5 +1,5 @@
 import items from "@/data/items/items";
-import type { Bonus, Class, Item, Rarity, Slot, StatType } from "dso-database-types";
+import type { Bonus, Class, Item, Rarity, Slot, StatType } from "dso-database";
 import type { NextRequest } from "next/server";
 
 type Message = {

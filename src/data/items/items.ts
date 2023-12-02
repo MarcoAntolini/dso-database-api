@@ -1,4 +1,4 @@
-import { type Item } from "dso-database-types";
+import { type Item } from "dso-database";
 import dwarfItems from "./dwarfItems";
 import mageItems from "./mageItems";
 import rangerItems from "./rangerItems";

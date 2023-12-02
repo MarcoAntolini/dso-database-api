@@ -1,4 +1,4 @@
-import { type Item } from "dso-database-types";
+import type { Item } from "dso-database";
 
 const mageItems: Item[] = [];
 
