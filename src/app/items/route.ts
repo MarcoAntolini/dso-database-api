@@ -4,13 +4,11 @@ import type { NextRequest } from "next/server";
 
 type Message = {
 	className: Class;
-	slot?: Slot;
+	slot?: Slot | Slot[];
 	stat?: StatType | StatType[];
 	rarity?: Rarity;
 	name?: string;
 };
-
-// TODO: fare slot come possibile array se ad esempio cerco una double handed e le voglio tutte (asce, spade ecc)
 
 export async function POST(req: NextRequest) {
 	const data = (await req.json()) as Message;
@@ -18,7 +16,7 @@ export async function POST(req: NextRequest) {
 	const filteredItems = items.filter((item) => {
 		return (
 			item.class === className &&
-			(slot === undefined || item.slot === slot) &&
+			(slot === undefined || (Array.isArray(slot) ? slot.includes(item.slot) : item.slot === slot)) &&
 			(stat === undefined ||
 				(Array.isArray(stat) ? stat.every((stat) => findStat(item, stat)) : findStat(item, stat))) &&
 			(rarity === undefined || item.rarity === rarity) &&
