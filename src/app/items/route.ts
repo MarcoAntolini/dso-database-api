@@ -17,8 +17,7 @@ export async function POST(req: NextRequest) {
 		return (
 			item.class === className &&
 			(slot === undefined || (Array.isArray(slot) ? slot.includes(item.slot) : item.slot === slot)) &&
-			(stat === undefined ||
-				(Array.isArray(stat) ? stat.every((stat) => findStat(item, stat)) : findStat(item, stat))) &&
+			(stat === undefined || (Array.isArray(stat) ? stat.every((s) => findStat(item, s)) : findStat(item, stat))) &&
 			(rarity === undefined || item.rarity === rarity) &&
 			(name === undefined || item.name.toLowerCase().includes(name.toLowerCase()))
 		);
