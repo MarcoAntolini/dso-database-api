@@ -22,7 +22,13 @@ export async function POST(req: NextRequest) {
 			(name === undefined || item.name.toLowerCase().includes(name.toLowerCase()))
 		);
 	});
-	return Response.json(filteredItems);
+	return new Response(JSON.stringify(filteredItems), {
+		headers: {
+			"Access-Control-Allow-Origin": "*",
+			"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+			"Access-Control-Allow-Headers": "Content-Type, Authorization",
+		},
+	});
 }
 
 function findStat(item: Item, stat: StatType): boolean {
